@@ -9,3 +9,186 @@
   --dark-grayish-blue: hsl(236, 13%, 42%);
   --very-dark-blue: hsl(240, 100%, 5%);
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--off-white);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+.nav .ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.ul li a {
+  color: var(--dark-grayish-blue);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  grid-template-areas:
+    "area1 area2"
+    "area1 area2"
+    "area3 area3";
+  gap: 1rem;
+}
+
+.first {
+  display: grid;
+  grid-area: "area1";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 1rem;
+}
+
+.image-first {
+  grid-column: 1/-1;
+}
+
+.title-first {
+  font-size: 2.125rem;
+  font-weight: 900;
+}
+
+.text-first {
+  color: var(--dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraph-first p {
+  font-size: 1.125rem;
+  padding-bottom: 20px;
+}
+
+.button-first button {
+  padding: 15px 20px;
+  background-color: var(--soft-red);
+}
+
+.button-first a {
+  font-size: 1rem;
+  color: var(--very-dark-blue);
+  font-weight: 800;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.second {
+  grid-area: area2;
+  display: flex;
+  flex-direction: column;
+  min-height: 290px;
+  background-color: var(--very-dark-blue);
+  padding: 20px 20px;
+  height: 100%;
+  max-height: 600px;
+}
+.second-title {
+  color: var(--soft-orange);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.articles {
+  display: flex;
+  flex-direction: column;
+}
+
+.articles h3 {
+  color: var(--off-white);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.articles p {
+  color: var(--grayish-blue);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--grayish-blue);
+}
+
+.articles:last-of-type p:last-child {
+  border-bottom: none;
+}
+
+.third {
+  margin-top: 30px;
+  display: flex;
+  grid-area: area3;
+  width: 100%;
+  margin-bottom: 30px;
+  flex-shrink: 1;
+}
+
+.top-news {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 5px;
+}
+
+.top-news-text h4 {
+  font-size: 2.5rem;
+  color: var(--soft-red);
+  margin-bottom: 15px;
+}
+
+.top-news-text-subtitle {
+  color: var(--very-dark-blue);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.top-news-text-paragraph {
+  color: var(--dark-grayish-blue);
+}
+
+@media (max-width: 800px) {
+  .section {
+    grid-template-columns: 1fr;
+      grid-template-areas:
+    "area1"
+    "area2"
+    "area3";
+  }
+  .third{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
